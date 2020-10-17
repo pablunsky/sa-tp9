@@ -8,13 +8,13 @@ services:
       - esb:esb
     ports:
       - "3000:3000"
-restaurante:
-  build: RESTAURANTE/.
-  command: node app.js
-  links:
-    - esb:esb
-  ports:
-    - "3001:3001"
+  restaurante:
+    build: RESTAURANTE/.
+    command: node app.js
+    links:
+      - esb:esb
+    ports:
+      - "3001:3001"
   repartidor:
     build: REPARTIDOR/.
     command: node app.js
