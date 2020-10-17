@@ -7,7 +7,7 @@ services:
     links:
       - esb:esb
     ports:
-      - "3000:3000"
+      - "3000:3000" 
   restaurante:
     build: RESTAURANTE/.
     command: node app.js
