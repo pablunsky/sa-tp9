@@ -6,16 +6,24 @@ services:
     command: node app.js
     links:
       - esb:esb
+    ports:
+      - "3000:3000"
+restaurante:
+  build: RESTAURANTE/.
+  command: node app.js
+  links:
+    - esb:esb
+  ports:
+    - "3001:3001"
   repartidor:
     build: REPARTIDOR/.
     command: node app.js
     links:
       - esb:esb
-  restaurante:
-    build: RESTAURANTE/.
-    command: node app.js
-    links:
-      - esb:esb
+    ports:
+      - "3002:3002"
   esb:
     build: ESB/.
     command: node app.js
+    ports:
+      - "3003:3003"

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h1>
+            Cliente
+        </h1>
+        <button onclick="postClientRestaurant()">
+            PUBLICAR PEDIDO A RESTAURANTE
+        </button>
+        <button onclick="getOrderStatusClientRestaurant()">
+            OBTENER ESTADO DE PEDIDO RESTAURANTE
+        </button>
+        <button onclick="getDeliveryStatusClientDelivery()">
+            OBTENER ESTADO DE PEDIDO REPARTIDOR
+        </button>
+    </div>
+
+    <div>
+        <h1>
+            Restaurante
+        </h1>
+        <button onclick="postRestaurantDelivery()">
+            PUBLICAR PEDIDO REPARTIDOR
+        </button>
+    </div>
+
+    <div>
+        <h1>
+            Repartidor
+        </h1>
+        <button onclick="updateDeliveryStatus()">
+            CAMBIAR ESTADO DE PEDIDO
+        </button>
+    </div>
+
+    <div>
+        <h1>
+            Totales
+        </h1>
+        <button onclick="getAllPostedRestaurant()">
+            OBTENER TODOS LOS PEDIDOS RESTAURANTE
+        </button>
+        <button onclick="getAllPostedDelivery()">
+            OBTENER TODOS LOS PEDIDOS DELIVERY
+        </button>
+    </div>
+
+
+    <script>
+
+        const postClientRestaurant = () =>
+        {
+            fetch('http://34.72.11.106:3000/postOrder',
+                {
+                    method: 'POST',
+                    body: JSON.stringify({ code: 0, status: 'pending' }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res =>
+                {
+                    res.json().then(value =>
+                    {
+                        console.log(value);
+                    })
+                });
+        }
+
+        const getOrderStatusClientRestaurant = () =>
+        {
+            fetch('http://34.72.11.106:3003/getOrderStatusRestaurant',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code: 0 })
+                }).then(res =>
+                {
+                    res.json().then(value =>
+                    {
+                        console.log(value);
+                    })
+                });
+        }
+
+        const getDeliveryStatusClientDelivery = () =>
+        {
+            fetch('http://34.72.11.106:3003/getOrderStatusDelivery',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code: 0 })
+                }).then(res =>
+                {
+                    res.json().then(value =>
+                    {
+                        console.log(value);
+                    })
+                });
+        }
+
+        const postRestaurantDelivery = () =>
+        {
+            fetch('http://34.72.11.106:3001/postDelivery',
+                {
+                    method: 'POST'
+                }).then(res =>
+                {
+                    res.json().then(value =>
+                    {
+                        console.log(value);
+                    })
+                });
+        }
+
+        const updateDeliveryStatus = () =>
+        {
+            fetch('http://34.72.11.106:3002/updateDelivery',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code: 0 })
+                }).then(res =>
+                {
+                    res.json().then(value =>
+                    {
+                        console.log(value);
+                    })
+                });
+        }
+
+
+        const getAllPostedRestaurant = () =>
+        {
+            fetch('http://34.72.11.106:3003/getPostedRestaurant').then(res =>
+            {
+                res.json().then(value =>
+                {
+                    console.log(value);
+                })
+            });
+        }
+
+        const getAllPostedDelivery = () =>
+        {
+            fetch('http://34.72.11.106:3003/getPostedDelivery').then(res =>
+            {
+                res.json().then(value =>
+                {
+                    console.log(value);
+                })
+            });
+        }
+
+    </script>
+</body>
+
+</html>
