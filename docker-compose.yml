@@ -1,21 +1,21 @@
 version: '3'
 
 services:
-  server:
+  cliente:
     build: CLIENTE/.
     command: node app.js
     links:
       - esb:esb
-  server:
+  repartidor:
     build: REPARTIDOR/.
     command: node app.js
     links:
       - esb:esb
-  server:
+  restaurante:
     build: RESTAURANTE/.
     command: node app.js
     links:
       - esb:esb
-  server:
+  esb:
     build: ESB/.
     command: node app.js
