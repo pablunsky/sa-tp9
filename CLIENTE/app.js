@@ -24,6 +24,7 @@ function logError(err, req, res, next)
 }
 app.use(logError)
 app.use(cors())
+app.options('*', cors())
 app.use(bodyParser.json());
 
 
