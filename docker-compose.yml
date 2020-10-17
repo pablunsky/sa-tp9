@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  server:
+    build: CLIENTE/.
+    command: node app.js
+    links:
+      - esb:esb
+  server:
+    build: REPARTIDOR/.
+    command: node app.js
+    links:
+      - esb:esb
+  server:
+    build: RESTAURANTE/.
+    command: node app.js
+    links:
+      - esb:esb
+  server:
+    build: ESB/.
+    command: node app.js
