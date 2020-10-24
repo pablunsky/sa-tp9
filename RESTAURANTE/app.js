@@ -67,7 +67,7 @@ app.post('/postDelivery', function (req, res)
 {
     request({
         method: 'POST',
-        uri: `http://localhost:3003/postOrderDelivery`,
+        uri: `http://esb/postOrderDelivery`,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(pedidos.pop())
     }, function (error, response, body)
@@ -92,8 +92,8 @@ app.get('/getPosted', function (req, res)
     res.json(pedidos);
 });
 
-//Inicializa la aplicacion en el puerto 3001
-const server = app.listen(3001, function ()
+//Inicializa la aplicacion en el puerto 80
+const server = app.listen(80, function ()
 {
     console.log('Aplicacion inicializada');
 });

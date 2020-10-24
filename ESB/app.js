@@ -33,7 +33,7 @@ app.post('/postOrderRestaurant', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://localhost:3001/postOrder`,
+        uri: `http://restaurant/postOrder`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(req.body)
     }, function (error, response, body)
@@ -57,7 +57,7 @@ app.post('/getOrderStatusRestaurant', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://localhost:3001/getOrderStatus`,
+        uri: `http://restaurant/getOrderStatus`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ code: req.body.code })
     }, function (error, response, body)
@@ -82,7 +82,7 @@ app.post('/getOrderStatusDelivery', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://localhost:3002/getOrderStatus`,
+        uri: `http://repartidor/getOrderStatus`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ code: req.body.code })
     }, function (error, response, body)
@@ -107,7 +107,7 @@ app.post('/postOrderDelivery', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://localhost:3002/postOrder`,
+        uri: `http://repartidor/postOrder`,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body)
     }, function (error, response, body)
@@ -132,7 +132,7 @@ app.get('/getPostedRestaurant', function (req, res)
     console.log(req.body);
     request({
         method: 'GET',
-        uri: `http://localhost:3001/getPosted`
+        uri: `http://restaurante/getPosted`
     }, function (error, response, body)
     {
         if (response.statusCode == 200)
@@ -156,7 +156,7 @@ app.get('/getPostedDelivery', function (req, res)
     console.log(req.body);
     request({
         method: 'GET',
-        uri: `http://localhost:3002/getPosted`
+        uri: `http://repartidor/getPosted`
     }, function (error, response, body)
     {
         if (response.statusCode == 200)
@@ -175,8 +175,8 @@ app.get('/getPostedDelivery', function (req, res)
 });
 
 
-//Inicializa la aplicacion en el puerto 3003
-const server = app.listen(3003, function ()
+//Inicializa la aplicacion en el puerto 80
+const server = app.listen(80, function ()
 {
     console.log('Aplicacion inicializada');
 });

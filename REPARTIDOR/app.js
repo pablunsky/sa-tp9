@@ -82,8 +82,8 @@ app.get('/getPosted', function (req, res)
     res.json(pedidos);
 });
 
-//Inicializa la aplicacion en el puerto 3002
-const server = app.listen(3002, function ()
+//Inicializa la aplicacion en el puerto 80
+const server = app.listen(80, function ()
 {
     console.log('Aplicacion inicializada');
 });
