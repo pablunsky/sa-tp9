@@ -59,7 +59,7 @@
 
         const postClientRestaurant = () =>
         {
-            fetch('http://34.72.11.106:3000/postOrder',
+            fetch('http://34.69.219.85/cliente/postOrder',
                 {
                     method: 'POST',
                     body: JSON.stringify({ code: 0, status: 'pending' }),
@@ -77,7 +77,7 @@
 
         const getOrderStatusClientRestaurant = () =>
         {
-            fetch('http://34.72.11.106:3003/getOrderStatusRestaurant',
+            fetch('http://34.69.219.85/esb/getOrderStatusRestaurant',
                 {
                     method: 'POST',
                     headers: {
@@ -95,7 +95,7 @@
 
         const getDeliveryStatusClientDelivery = () =>
         {
-            fetch('http://34.72.11.106:3003/getOrderStatusDelivery',
+            fetch('http://34.69.219.85/esb/getOrderStatusDelivery',
                 {
                     method: 'POST',
                     headers: {
@@ -113,7 +113,7 @@
 
         const postRestaurantDelivery = () =>
         {
-            fetch('http://34.72.11.106:3001/postDelivery',
+            fetch('http://34.69.219.85/restaurante/postDelivery',
                 {
                     method: 'POST'
                 }).then(res =>
@@ -127,7 +127,7 @@
 
         const updateDeliveryStatus = () =>
         {
-            fetch('http://34.72.11.106:3002/updateDelivery',
+            fetch('http://34.69.219.85/repartidor/updateDelivery',
                 {
                     method: 'POST',
                     headers: {
@@ -146,7 +146,7 @@
 
         const getAllPostedRestaurant = () =>
         {
-            fetch('http://34.72.11.106:3003/getPostedRestaurant').then(res =>
+            fetch('http://34.69.219.85/esb/getPostedRestaurant').then(res =>
             {
                 res.json().then(value =>
                 {
@@ -157,7 +157,7 @@
 
         const getAllPostedDelivery = () =>
         {
-            fetch('http://34.72.11.106:3003/getPostedDelivery').then(res =>
+            fetch('http://34.69.219.85/esb/getPostedDelivery').then(res =>
             {
                 res.json().then(value =>
                 {
