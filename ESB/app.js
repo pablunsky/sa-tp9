@@ -33,7 +33,7 @@ app.post('/postOrderRestaurant', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://restaurant/postOrder`,
+        uri: `/restaurant/postOrder`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(req.body)
     }, function (error, response, body)
@@ -57,7 +57,7 @@ app.post('/getOrderStatusRestaurant', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://restaurant/getOrderStatus`,
+        uri: `/restaurant/getOrderStatus`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ code: req.body.code })
     }, function (error, response, body)
@@ -82,7 +82,7 @@ app.post('/getOrderStatusDelivery', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://repartidor/getOrderStatus`,
+        uri: `/repartidor/getOrderStatus`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ code: req.body.code })
     }, function (error, response, body)
@@ -107,7 +107,7 @@ app.post('/postOrderDelivery', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://repartidor/postOrder`,
+        uri: `/repartidor/postOrder`,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body)
     }, function (error, response, body)
@@ -132,7 +132,7 @@ app.get('/getPostedRestaurant', function (req, res)
     console.log(req.body);
     request({
         method: 'GET',
-        uri: `http://restaurante/getPosted`
+        uri: `/restaurante/getPosted`
     }, function (error, response, body)
     {
         if (response.statusCode == 200)
@@ -156,7 +156,7 @@ app.get('/getPostedDelivery', function (req, res)
     console.log(req.body);
     request({
         method: 'GET',
-        uri: `http://repartidor/getPosted`
+        uri: `/repartidor/getPosted`
     }, function (error, response, body)
     {
         if (response.statusCode == 200)

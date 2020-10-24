@@ -34,7 +34,7 @@ app.post('/postOrder', function (req, res)
     console.log(req.body);
     request({
         method: 'POST',
-        uri: `http://esb/postOrderRestaurant`,
+        uri: `/esb/postOrderRestaurant`,
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(req.body)
     }, function (error, response, body)

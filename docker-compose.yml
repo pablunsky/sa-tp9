@@ -13,22 +13,12 @@ services:
   cliente:
     build: CLIENTE/.
     command: node app.js
-    links:
-      - esb:esb
   restaurante:
     build: RESTAURANTE/.
     command: node app.js
-    links:
-      - esb:esb
   repartidor:
     build: REPARTIDOR/.
     command: node app.js
-    links:
-      - esb:esb
   esb:
     build: ESB/.
     command: node app.js
-    links:
-      - cliente:cliente
-      - restaurante:restaurante
-      - repartidor:repartidor

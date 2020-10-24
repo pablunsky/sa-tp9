@@ -67,7 +67,7 @@ app.post('/postDelivery', function (req, res)
 {
     request({
         method: 'POST',
-        uri: `http://esb/postOrderDelivery`,
+        uri: `/esb/postOrderDelivery`,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(pedidos.pop())
     }, function (error, response, body)
